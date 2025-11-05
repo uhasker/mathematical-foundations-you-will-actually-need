@@ -1,0 +1,1137 @@
+\section{Logic}
+
+\subsection{Propositional Logic}
+
+When we reason mathematically, we often make \emph{statements} that can be either true or false.  
+For example:
+\[
+2 + 3 = 5 \quad \text{(true)}, \qquad 2 + 3 = 6 \quad \text{(false)}.
+\]
+Statements like these form the foundation of mathematical logic.
+
+\begin{definition}
+A (logical) \textbf{statement} (or \textbf{proposition}) is a sentence that has a definite truth value — it is either \textbf{true} (T) or \textbf{false} (F).  
+A statement that cannot be classified as true or false (for example, a question or command) is \emph{not} a proposition.
+\end{definition}
+
+We usually denote statements by lowercase letters such as \(p, q, r, \ldots\) and so on.
+
+\begin{example}
+Here are some examples of statements and non-statements:
+\begin{itemize}
+  \item \(p = \)"\(3 + 4 = 7\)" is a statement (true).
+  \item \(q = \)"\(3 + 4 = 6\)" is a statement (false).
+  \item "\(x > 5\)" is not a statement until we assign a specific value to \(x\).
+  \item "Close the door!" is not a statement, because it is neither true nor false.
+  \item Similarly, "Can I have the salt?" is not a statement, because it is neither true nor false.
+\end{itemize}
+\end{example}
+
+In mathematical logic, we build complex statements from simpler ones using \textbf{logical connectives}.
+The most important logical connectives are: \\
+
+\[
+\neg \ (\text{not}), \quad \land \ (\text{and}), \quad \lor \ (\text{or}), \quad \Rightarrow \ (\text{if...then}), \quad \Leftrightarrow \ (\text{if and only if}).
+\]
+
+We now look at these one by one.
+
+\paragraph{Negation (\(\neg\)):}
+Negation reverses the truth value of a statement.  
+If a statement \(p\) is true, then "not \(p\)" (written \(\neg p\)) is false, and vice versa.
+
+We can write this using a so-called truth table:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$p$ & $\neg p$ & Meaning \\
+\hline
+T & F & "not \(p\)" is true when \(p\) is false \\
+F & T & "not \(p\)" is false when \(p\) is true \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{example}
+Let \(p\): "\(3 > 0\)".  
+Then \(\neg p\): "\(3 \le 0\)".  
+Here, \(p\) is true, so \(\neg p\) must be false.  
+\end{example}
+
+\paragraph{Conjunction (\(\land\)):}
+
+The connective \(\land\) means "and."  
+The statement \(p \land q\) ("\(p\) and \(q\)") is true only when both \(p\) and \(q\) are true.
+
+Again, we can write this using a truth table:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$p$ & $q$ & $p \land q$ \\
+\hline
+T & T & T \\
+T & F & F \\
+F & T & F \\
+F & F & F \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{example}
+Let \(p\): "\(3 > 0\)" and \(q\): "\(3 < 5\)".  
+Then \(p \land q\): "\(3 > 0\) and \(3 < 5\)".  
+Here, both \(p\) and \(q\) are true, so \(p \land q\) must be true.
+\end{example}
+
+\paragraph{Disjunction (\(\lor\)):}
+
+The connective \(\lor\) means "or."  
+In mathematics, "or" is understood in the \emph{inclusive} sense — that is, \(p \lor q\) is true if \emph{at least one} of \(p\) or \(q\) is true.
+
+Once again, we can write this using a truth table:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$p$ & $q$ & $p \lor q$ \\
+\hline
+T & T & T \\
+T & F & T \\
+F & T & T \\
+F & F & F \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{example}
+Let \(p\): "\(3 < 0\)" and \(q\): "\(3 > 5\)".  
+Then \(p \lor q\): "\(3 < 0\) or \(3 > 5\)".  
+Here, \(p\) is false, but \(q\) is true, so \(p \lor q\) is true.
+\end{example}
+
+It is helpful to imagine the conditions as a circuit where two switches are connected in series and the result is a light that is either on or off:
+\begin{itemize}
+  \item For \(\land\), both switches must be on (true) for the light to be on.  
+  \item For \(\lor\), at least one switch being on is enough for the light to be on.
+\end{itemize}
+
+Note that we have introduced the connectives using truth tables.
+Generally speaking, a truth table is a simple but powerful tool for describing how a logical connective behaves.  
+It lists all possible truth values of the input statements and shows the resulting truth value of the combined statement.  
+Since every statement in propositional logic is either true (T) or false (F), there are only finitely many cases to check. \\
+
+For a single statement \(p\), there are two possibilities: \(p\) is true or \(p\) is false.  
+For two statements \(p\) and \(q\), there are four possibilities: \((T,T), (T,F), (F,T), (F,F)\).  
+Similarly, for three statements \(p, q, r\), there are eight possibilities: \((T,T,T), (T,T,F), (T,F,T), (T,F,F), (F,T,T), (F,T,F), (F,F,T), (F,F,F)\).
+Generally, for \(n\) statements, there are \(2^n\) possibilities.
+Regardless of the number of statements, a truth table simply records the outcome of a logical expression in each case. \\
+
+Truth tables work because logical connectives depend \emph{only} on the truth values of the statements they connect, not on their content.  
+Thus, by checking every possible combination of truth values, we capture the complete behavior of the connective.  
+This makes truth tables a fundamental way to define and analyze logical operations.
+
+\paragraph{Implication (\(\Rightarrow\)):}
+
+The connective \(\Rightarrow\) is among the most important in mathematics, but also among the most misunderstood.  
+It is commonly described as "if...then...", but this requires some clarification. \\
+
+In everyday language, we use "if...then..." to describe a \emph{cause-and-effect} relationship:
+\[
+\text{If it rains, then the ground gets wet.}
+\]
+Here, the first part (it rains) causes the second part (the ground gets wet).  
+In mathematics, however, the connective
+\[
+p \Rightarrow q
+\]
+does not describe a causal link but a \emph{logical guarantee}: whenever \(p\) is true, \(q\) must also be true. \\
+
+Put differently, the statement \(p \Rightarrow q\) means:  
+\[
+\text{"It cannot be the case that \(p\) is true and \(q\) is false."}
+\]
+
+That is the entire idea of implication in logic.  
+It is a relationship about the possible truth values of two statements — not about time, causation, or explanation. \\
+
+This leads to an interesting edge case — if \(p\) is false, then \(p \Rightarrow q\) is true regardless of the truth value of \(q\)! \\
+
+Let us consider two examples that highlight the difference between the everyday cause-and-effect meaning and the logical meaning of implication: \\
+\begin{itemize}
+  \item \textbf{Example 1: Causal situation (everyday and logical meaning coincide)}  
+  Let \(p\): "It rains," and \(q\): "The ground gets wet."  
+  Whenever it rains, the ground really does get wet, so the implication \(p \Rightarrow q\) is true in both the everyday and logical sense.
+
+  \item \textbf{Example 2: Non-causal but logically true}  
+  Let \(p\): "\(2\) is odd," and \(q\): "\(5 > 3\)."  
+  The statement "If \(2\) is odd, then \(5 > 3\)" sounds strange in ordinary speech, since there is no causal relation.  
+  But in logic, this is considered \emph{true}, because the premise \(p\) is false — and hence its not the case that \(p\) is true and \(q\) is false.
+\end{itemize}
+
+This definition may feel unintuitive at first, but it is crucial for reasoning consistently.  
+In mathematics, we want statements from predicate logic (which we will cover in the next section) like
+\[
+\text{"If a number is divisible by 4, then it is even."}
+\]
+to count as true, because there is no counterexample — no number divisible by 4 that is not even.  
+The logical definition of implication captures exactly that idea. \\
+
+We can now formalize what we have described.  
+Since \(p \Rightarrow q\) just means that the combination "\(p\) true and \(q\) false" must never occur, the truth table is as follows:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$p$ & $q$ & $p \Rightarrow q$ \\
+\hline
+T & T & T \\
+T & F & F \\
+F & T & T \\
+F & F & T \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{The Biconditional (\(\Leftrightarrow\))}
+
+The biconditional connective combines two implications:
+\[
+p \Leftrightarrow q \quad \text{means} \quad (p \Rightarrow q) \land (q \Rightarrow p).
+\]
+It reads "\(p\) if and only if \(q\)," and expresses that \(p\) and \(q\) are true or false together.  
+In other words, the biconditional is true exactly when both statements have the same truth value.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$p$ & $q$ & $p \Leftrightarrow q$ \\
+\hline
+T & T & T \\
+T & F & F \\
+F & T & F \\
+F & F & T \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{example}
+As an example, let \(p\): "The light is on," and \(q\): "The room is bright."
+We assume that the light is functioning properly.
+In that case, \(p \Rightarrow q\) is true (there is no case where the light is on and the room is not bright).
+However, \(q \Rightarrow p\) is false (it's easy to imagine that the room can be bright but the light is not on, e.g. because the sun is shining in the room).
+Hence \(p \Leftrightarrow q\) is false.
+Therefore, the biconditional is false in this case.
+\end{example}
+
+\begin{example}
+Let \(p\): “The number \(n\) is even,” and \(q\): “\(n\) is divisible by 2.”
+
+In this situation, the two statements always have exactly the same truth value.  
+Every even number is divisible by 2, so
+\[
+p \Rightarrow q \quad\text{is true}.
+\]
+Conversely, every number divisible by 2 is even, so
+\[
+q \Rightarrow p \quad\text{is also true}.
+\]
+Since both implications hold, we have
+\[
+p \Leftrightarrow q \quad\text{true}.
+\]
+
+Thus the biconditional is true here: the two statements express the same condition in different words, and they are logically equivalent.
+\end{example}
+
+\paragraph{Order of Operations}
+
+When evaluating complex logical expressions, the connectives are applied in the following order (similar to arithmetic precedence):
+\[
+\neg \text{ first}, \quad \land, \quad \lor, \quad \Rightarrow, \quad \Leftrightarrow.
+\]
+
+Parentheses can always be used to clarify grouping. \\
+
+\paragraph{Truth Tables for Complex Expressions}
+We have introduced the truth tables for the basic logical connectives (\(\neg\), \(\land\), \(\lor\), \(\Rightarrow\), \(\Leftrightarrow\)).  
+To understand more complicated logical expressions, we combine these basic tables systematically. \\
+
+A truth table for a complex expression lists all possible truth values of its variables and shows how the expression evaluates in each case.  
+This technique is essential for verifying logical equivalences and for understanding how statements behave under different conditions. \\
+
+Consider the expression
+\[
+\neg(p \lor q) \Rightarrow r.
+\]
+
+We will construct its truth table step by step. \\
+\textbf{Step 1: List all combinations of truth values.}
+
+Since the expression contains three variables (\(p, q, r\)), there are \(2^3 = 8\) possible assignments.  
+We begin by listing them:
+
+\[
+\begin{array}{|c|c|c|}
+\hline
+p & q & r \\
+\hline
+T & T & T \\
+T & T & F \\
+T & F & T \\
+T & F & F \\
+F & T & T \\
+F & T & F \\
+F & F & T \\
+F & F & F \\
+\hline
+\end{array}
+\]
+
+\textbf{Step 2: Compute smaller subexpressions.}
+
+A good rule of thumb is:
+
+\begin{itemize}
+  \item Work from the inside out.  
+  \item Use one column for each logical subexpression.  
+  \item Avoid skipping steps.
+\end{itemize}
+
+The expression \(\neg(p \lor q) \Rightarrow r\) has the structure:
+
+\begin{enumerate}
+  \item \(p \lor q\)  
+  \item \(\neg(p \lor q)\)  
+  \item \(\neg(p \lor q) \Rightarrow r\)
+\end{enumerate}
+
+So we add a column for each piece. \\
+
+\textbf{Step 3: Fill in the table.}
+
+\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p & q & r & p \lor q & \neg(p \lor q) & \neg(p \lor q) \Rightarrow r \\
+\hline
+T & T & T & T & F & T \\
+T & T & F & T & F & T \\
+T & F & T & T & F & T \\
+T & F & F & T & F & T \\
+F & T & T & T & F & T \\
+F & T & F & T & F & T \\
+F & F & T & F & T & T \\
+F & F & F & F & T & F \\
+\hline
+\end{array}
+\]
+
+\medskip
+A few lines deserve comment:
+
+\begin{itemize}
+  \item Whenever \(p\) or \(q\) is true, \(p \lor q\) is true.  
+  \item \(\neg(p \lor q)\) is therefore true only in the last two rows.  
+  \item The implication \(\neg(p \lor q) \Rightarrow r\) is false only in the final row, because this is the only case where the implication’s premise is true and its conclusion false.
+\end{itemize}
+
+To construct the truth table for any expression, follow these steps:
+
+\begin{enumerate}
+  \item \textbf{Identify all variables.}  
+  If the expression contains \(n\) variables, you will have \(2^n\) rows.
+
+  \item \textbf{List all truth-value combinations.}  
+  A convenient method is to alternate T and F in a structured pattern:
+  \begin{itemize}
+    \item For the first variable: TTTTFFFF  
+    \item For the second: TTFFTTFF  
+    \item For the third: TFTFTFTF  
+    \item and so on.
+  \end{itemize}
+
+  \item \textbf{Break the expression into components.}  
+  Treat subexpressions like building blocks.  
+  Each logical subexpression gets its own column.
+
+  \item \textbf{Evaluate column by column.}  
+  Use the known truth tables for \(\neg\), \(\land\), \(\lor\), \(\Rightarrow\), \(\Leftrightarrow\).
+
+  \item \textbf{Work from the inside out.}  
+  Parentheses tell you which parts to compute first.
+
+  \item \textbf{The last column is the truth table of the full expression.}
+\end{enumerate}
+
+Truth tables are a mechanical but extremely reliable way to determine the truth value of a complex expression for all possible truth values of the variables.
+They are also useful to check whether two expressions are logically equivalent.
+Simply compute the truth table for both expressions and compare the results.
+In fact, we can use truth tables to introduce a few important logical equivalence laws.
+
+\paragraph{Logical Equivalence}
+
+Logical equivalence is one of the central ideas in propositional logic.  
+Often, two different-looking expressions behave in exactly the same way for all possible truth values.  
+When this happens, we treat them as interchangeable in proofs and calculations. \\
+
+Two statements \(p\) and \(q\) are said to be \textbf{logically equivalent} if they always have the same truth value.  
+We write
+\[
+p \equiv q.
+\]
+This symbol does not form a new statement inside the logic; instead, it expresses a \emph{meta-level fact} about the structure of statements — namely that two statements are logically equivalent regardless of the truth values of the variables.
+
+Logical equivalence is therefore different from the biconditional
+\[
+p \Leftrightarrow q
+\]
+which \emph{is} a statement whose truth value depends on \(p\) and \(q\).  
+By contrast, \(p \equiv q\) asserts that the two sides are interchangeable in all circumstances. \\
+
+In this section we collect the most important logical equivalence laws.  
+They allow us to rewrite statements into simpler or more convenient forms, just as algebraic laws let us simplify expressions.
+Note that proving these laws is a simple matter of writing the truth tables for the left and right hand side of the equivalence and comparing the results.
+In fact, we encourage you to prove these laws yourself as an exercise.
+
+\paragraph{Double Negation}
+
+Negating a negation brings you back where you started:
+\[
+\neg(\neg p) \equiv p.
+\]
+This matches ordinary intuition: “not (not \(p\))” means \(p\).
+
+\paragraph{De Morgan’s Laws}
+
+Negation distributes over \(\land\) and \(\lor\), but flips them:
+\[
+\neg(p \lor q) \equiv (\neg p) \land (\neg q),
+\]
+\[
+\neg(p \land q) \equiv (\neg p) \lor (\neg q).
+\]
+These correspond exactly to the intuitive idea that “not (A or B)” means “not A and not B,” and similarly for “and.”
+
+\paragraph{Commutative Laws}
+
+Order does not matter for \(\land\) or \(\lor\):
+\[
+p \land q \equiv q \land p,
+\qquad
+p \lor q \equiv q \lor p.
+\]
+
+\paragraph{Associative Laws}
+
+Grouping does not matter for repeated \(\land\) or repeated \(\lor\):
+\[
+(p \land q) \land r \equiv p \land (q \land r),
+\]
+\[
+(p \lor q) \lor r \equiv p \lor (q \lor r).
+\]
+Just as with addition or multiplication in algebra, parentheses can often be omitted.
+
+\paragraph{Idempotent Laws}
+
+Repeating the same statement with “and” or “or” does not change anything:
+\[
+p \land p \equiv p,
+\qquad
+p \lor p \equiv p.
+\]
+This reflects the fact that combining a condition with itself adds no new information.
+
+\paragraph{Distributive Laws}
+
+\(\land\) distributes over \(\lor\) and vice versa.  
+These are analogous to algebraic distributive laws:
+\[
+p \land (q \lor r) \equiv (p \land q) \lor (p \land r),
+\]
+\[
+p \lor (q \land r) \equiv (p \lor q) \land (p \lor r).
+\]
+These are especially useful for rewriting complex expressions into forms suitable for truth tables or proofs.
+
+\paragraph{Absorption Laws}
+
+These laws capture the idea that sometimes one part of an expression “absorbs” another, making it redundant:
+\[
+p \lor (p \land q) \equiv p,
+\]
+\[
+p \land (p \lor q) \equiv p.
+\]
+
+Intuitively:
+\begin{itemize}
+  \item If \(p\) is true, then \(p \lor (p \land q)\) is automatically true.  
+  \item If \(p\) is false, then \((p \land q)\) is false, so the whole expression reduces to \(p\).  
+\end{itemize}
+A similar argument applies to the second law. \\
+
+\paragraph{Putting the Laws Together}
+
+These equivalence laws work exactly like algebraic simplification rules and you can use them to simplify complex logical statements. \\
+
+For example, consider simplifying the expression \(\neg (p \land (p \lor q))\):
+
+\[
+\neg(p \land (p \lor q))
+\equiv \neg(p)
+\land \neg(p \lor q)
+\quad\text{(De Morgan)}
+\]
+\[
+\equiv \neg p \land (\neg p \land \neg q)
+\quad\text{(De Morgan again)}
+\]
+\[
+\equiv \neg p 
+\quad\text{(idempotent and absorption laws)}.
+\]
+
+You can check that this is correct by comparing the truth tables of \(\neg (p \land (p \lor q))\) and \(\neg p\). \\
+
+Logical equivalence allows us to convert complex expressions into simpler ones in a structured, mathematically valid way.
+
+\begin{exercise}
+
+Determine whether each of the following equivalences is true.  
+If true, justify it using the laws above; if false, provide a counterexample (a truth assignment that breaks the equivalence).
+
+\begin{enumerate}
+  \item \(p \Rightarrow q \equiv \neg q \Rightarrow \neg p\)
+  \item \(\neg(p \land q) \equiv \neg p \lor \neg q\)
+  \item \((p \lor q) \Rightarrow r \equiv (p \Rightarrow r) \land (q \Rightarrow r)\)
+  \item \(p \lor (q \land \neg p) \equiv p \lor q\)
+  \item \(\neg(p \lor q \lor r) \equiv \neg p \land \neg q \land \neg r\)
+\end{enumerate}
+
+\end{exercise}
+
+\subsection{Predicate Logic}
+
+So far, we have worked with statements that are either true or false on their own.
+However, many mathematical statements involve \emph{variables}: they become true or false only once specific values are substituted.  
+Predicate logic extends propositional logic to handle such variable-dependent statements.
+
+\begin{definition}
+
+A \textbf{predicate} is an expression that contains one or more variables and becomes a statement once specific values are inserted.  
+We usually denote predicates by letters such as \(P, Q, R, \ldots\)
+
+\[
+P(x), \qquad Q(x,y), \qquad R(x,y,z), \ldots
+\]
+
+\end{definition}
+
+\begin{example}
+Here are some examples of predicates:
+\begin{itemize}
+  \item \(P(x)\): "\(x > 0\)" \\
+  This is not a statement by itself, but \(P(3)\) ("\(3 > 0\)") is a true statement, and \(P(-5)\) is false. Therefore, \(P(x)\) is a predicate.
+  \item \(Q(x,y)\): "\(x + y = 10\)"  
+  For example, \(Q(4,6)\) is true, but \(Q(3,3)\) is false. Again, assigning values to the variables makes \(Q(x,y)\) a statement. Therefore, \(Q(x,y)\) is a predicate.
+  \item \(R(x,y,z)\): "\(x = yz\)"  
+  Whether this is true depends on the chosen values for \(x, y, z\). Again, assigning values to the variables makes \(R(x,y,z)\) a statement. Therefore, \(R(x,y,z)\) is a predicate.
+\end{itemize}
+\end{example}
+
+Predicates allow us to talk about general mathematical patterns rather than specific facts.
+In fact, we will rarely be interested in simple propositions and the most important reason we have introduced propositional logic is as an important building block for predicate logic.
+
+\paragraph{Quantifiers}
+
+To turn a predicate into a full statement — something that is unambiguously true or false — we frequently need to specify whether a predicate holds for \emph{some} values or for \emph{all} values of its variables.  
+For this, predicate logic uses two quantifiers:
+
+\[
+\exists \ (\text{there exists}), \qquad \forall \ (\text{for all}).
+\]
+
+At this stage, we work with quantifiers informally and do not yet rely on set theory.  
+We simply quantify over "allowable values" of the variable (as is customary before formal set-theoretic foundations are introduced).
+In this chapter, we will restrict ourselves to the real numbers, unless otherwise specified. \\
+
+Whenever we write an expression like \(P(x)\), it is crucial to understand that the variable \(x\) is not floating freely.  
+It must range over a specific collection of allowable values — the \textbf{domain of discourse}.  
+Only after specifying the domain does a quantified expression such as
+\[
+\forall x\, P(x)
+\quad\text{or}\quad
+\exists x\, P(x)
+\]
+become well-defined. \\
+
+For example, if \(P(x)\) is “\(x > 0\),” then:
+\begin{itemize}
+  \item \(\forall x\, P(x)\) is false if \(x\) ranges over all real numbers,
+  \item but true if \(x\) ranges only over positive numbers,
+  \item and meaningless if we have not specified any domain at all.
+\end{itemize}
+
+The meaning of a quantified statement always depends on what the variable is allowed to be. \\
+
+In this chapter, unless stated otherwise, we take the domain of each variable to be the real numbers \(\mathbb{R}\).  
+Thus, writing expressions such as
+\[
+P(x),\quad Q(x,y),\quad \forall x,\quad \exists y
+\]
+implicitly means that \(x, y,\ldots\) range over real numbers. \\
+
+However, this is not a permanent restriction.  
+Variables in logical statements can refer to many other types of objects:
+numbers, functions, geometric shapes, sequences, matrices, sets, or almost anything we might want to talk about mathematically.  
+The only requirement is that the domain be clearly specified. \\
+
+If we allow variables to range over “anything at all,” logical statements quickly become ambiguous or even paradoxical.  
+(We do not discuss these paradoxes here, but they arise when domains are left vague or when objects are allowed to refer to themselves.)  
+For now, we avoid these problems by always working with a clearly understood domain — in our case, the real numbers — and by avoiding self-referential constructions.
+
+Strictly speaking, to define a domain rigorously we need some basic ideas from set theory.  
+But set theory itself relies heavily on logical notation and quantifiers.  
+Each subject depends on the other, and one of them must come first. \\
+
+For that reason, we introduce quantifiers here in a slightly informal but completely functional way:
+\begin{itemize}
+  \item we assume that variables range over the real numbers (unless otherwise specified),
+  \item and we delay the precise set-theoretic definition of domains until later.
+\end{itemize}
+This approach is standard in introductory mathematics because it allows us to build intuition and start writing proofs long before we introduce the technical machinery of sets.
+
+\paragraph{Existential Quantifier (\(\exists\))}
+
+The statement
+\[
+\exists x\, P(x)
+\]
+reads "there exists an \(x\) such that \(P(x)\) is true."  
+It is true if the predicate becomes true for at least one allowable value of \(x\) (i.e. a real number in our case).
+
+\begin{example}
+Let \(P(x)\): "\(x^2 = 9\)."  
+Then
+\[
+\exists x\, P(x)
+\]
+is true, because substituting \(x = 3\) or \(x = -3\) makes the predicate true, i.e. there exists a real number \(x\) that makes the predicate true.
+\end{example}
+
+\begin{example}
+Let \(Q(x)\): "\(x < 0\)."  
+Then "\(\exists x\, Q(x)\)" says: "There exists a negative number."  
+This is obviously true, e.g. for \(x = -1\).
+\end{example}
+
+\begin{example}
+Let \(R(x)\): “\(x^2 = -1\).”  
+The statement
+\[
+\exists x\, R(x)
+\]
+reads: “There exists a real number \(x\) such that \(x^2 = -1\).”  
+But no real number squared is negative, so there is no real \(x\) for which \(x^2 = -1\).  
+Thus the existential statement is false.
+\end{example}
+
+It is important to note that while \(P(x)\) itself is not a statement — its truth depends on the specific value of \(x\) — the expression \(\exists x\, P(x)\) \emph{is} a statement.  
+Once we apply a quantifier, the sentence becomes a complete assertion that is either true or false.  
+The quantifier removes the ambiguity: instead of depending on a particular value of \(x\), the quantified expression speaks about the entire range of possible values.  
+
+\paragraph{Universal Quantifier (\(\forall\))}
+
+The statement
+\[
+\forall x\, P(x)
+\]
+reads "for all \(x\), \(P(x)\) is true."  
+It asserts that the predicate holds for \emph{every} allowable value of the variable, without exception.
+
+\begin{example}
+Let \(P(x)\): "\(x^2 \ge 0\)."  
+Then
+\[
+\forall x\, P(x)
+\]
+is true, because every number squared is nonnegative.
+\end{example}
+
+\begin{example}
+Let \(Q(x)\): "\(x > 5\)."  
+Then "\(\forall x\, Q(x)\)" is false, because not every number is greater than 5.
+\end{example}
+
+\paragraph{Combining Quantifiers}
+
+So far, we have seen quantifiers such as
+\[
+\exists x\, P(x) \quad\text{and}\quad \forall x\, P(x),
+\]
+which bind a single variable. \\
+
+But many mathematical statements involve relationships between two or more variables.  
+In such situations, a predicate may take multiple inputs, such as \(P(x,y)\), \(Q(x,y,z)\), and so on.  
+We can then use several quantifiers in a row. \\
+
+It is essential to understand how these combinations work, because changing the order of quantifiers can completely change the meaning of a statement. \\
+
+If a predicate has more than one variable—for example \(P(x,y)\)—we can quantify each one:
+
+\[
+\forall x\, \forall y\, P(x,y), \qquad
+\forall x\, \exists y\, P(x,y), \qquad
+\exists x\, \forall y\, P(x,y), \qquad
+\exists x\, \exists y\, P(x,y).
+\]
+
+Each of these has a different interpretation.
+
+\begin{itemize}
+  \item \(\forall x\, \forall y\, P(x,y)\):  
+    “For every \(x\) and for every \(y\), the statement \(P(x,y)\) is true.”  
+    Both variables must satisfy the predicate universally.
+
+  \item \(\exists x\, \exists y\, P(x,y)\):  
+    “There exist some \(x\) and some \(y\) such that \(P(x,y)\) is true.”  
+    We only need one pair of values that works.
+
+  \item \(\forall x\, \exists y\, P(x,y)\):  
+    “For every \(x\), there exists a \(y\) (possibly depending on \(x\)) such that \(P(x,y)\) is true.”
+
+  \item \(\exists x\, \forall y\, P(x,y)\):  
+    “There exists an \(x\), such that for every \(y\), the statement \(P(x,y)\) is true.”
+\end{itemize}
+
+Note that the last two statements are very different, even though they use the same quantifiers.  
+This leads us to the concept of \textbf{quantifier order}. \\
+
+Some combinations of quantifiers behave naturally and allow swapping:
+
+\[
+\forall x\, \forall y\, P(x,y) \equiv \forall y\, \forall x\, P(x,y),
+\]
+\[
+\exists x\, \exists y\, P(x,y) \equiv \exists y\, \exists x\, P(x,y).
+\]
+
+These statements mean the same thing because “for all” followed by “for all” does not depend on order, and similarly for “there exists” followed by “there exists”.  
+The structure is symmetric: choosing all values of \(x\) and all values of \(y\) does not depend on which order you list them.
+
+\begin{example}
+Let \(P(x,y)\): “\(x + y = y + x\).”  
+Then
+\[
+\forall x\, \forall y\, (x + y = y + x)
+\]
+is obviously the same as
+\[
+\forall y\, \forall x\, (x + y = y + x).
+\]
+Both express the commutativity of addition.
+\end{example}
+
+However, when quantifiers are of \emph{different types}, the situation changes dramatically. \\
+
+In that case, the order of \(\forall\) and \(\exists\) is almost always meaningful.  
+Swapping them typically produces a statement with a completely different truth value. \\
+
+To see this clearly, consider the predicate
+\[
+P(x,y) \equiv x < y.
+\]
+
+\begin{example}
+
+\[
+\forall x\, \exists y\, (x < y)
+\]
+
+This says: “No matter which number \(x\) you pick, there exists a number \(y\) that is larger.”
+
+This is true.  
+For any \(x\), we can pick \(y = x + 1\), which is larger than \(x\).
+
+\end{example}
+
+\begin{example}
+Let \(P(x,y)\): "\(x < y\)."  
+Then
+\[
+\exists y\, \forall x\, (x < y)
+\]
+
+This says: “There is a single number \(y\) that is larger than every real number \(x\).” \\
+
+This is quite obviously false.  
+No matter what \(y\) you choose, I can always pick an \(x\) larger than \(y\).
+
+\end{example}
+
+Thus we have found a predicate \(P(x,y)\) such that:
+\[
+\forall x\, \exists y\, P(x,y) \text{ is true,}
+\qquad
+\exists y\, \forall x\, P(x,y) \text{ is false.}
+\]
+
+Even though the only difference is the order of \(\forall\) and \(\exists\), the meaning changes completely.
+
+\paragraph{The “Game” Interpretation}
+
+A helpful way to understand quantifier order is to imagine a game with two players:
+
+\begin{itemize}
+  \item Player A chooses values for variables preceded by \(\forall\).
+  \item Player B chooses values for variables preceded by \(\exists\).
+  \item The players move in the order of the quantifiers.
+\end{itemize}
+
+Then the statement is true if Player B can always choose values that make the predicate true. \\
+
+For example:
+\[
+\forall x\, \exists y\, P(x,y)
+\]
+means that the game proceeds as follows:
+
+\begin{itemize}
+  \item Player A chooses any \(x\).
+  \item Player B responds with a suitable \(y\) (possibly depending on \(x\)).
+  \item If Player B always has a winning move, the statement is true.
+\end{itemize}
+
+But
+\[
+\exists y\, \forall x\, P(x,y)
+\]
+means that the game proceeds completely differently:
+
+\begin{itemize}
+  \item Player B must choose one \(y\) \emph{before} Player A moves.
+  \item Then Player A chooses any \(x\) (possibly depending on \(y\)).
+  \item Only if player B's single choice works for every single \(x\), the statement is true.
+\end{itemize}
+
+These are fundamentally different games — the second is much harder to win for Player B.
+
+\begin{example}
+
+Let \(Q(x,y)\): \(x + y = 0\).
+
+\begin{itemize}
+  \item \(\forall x\, \exists y\, Q(x,y)\) is true.  
+    For every \(x\), choosing \(y = -x\) satisfies \(x + y = 0\).
+
+  \item \(\exists y\, \forall x\, Q(x,y)\) is false.  
+    No single number \(y\) can satisfy \(x + y = 0\) for every value of \(x\).
+\end{itemize}
+
+Again:
+\[
+\forall x\, \exists y\; Q(x,y) 
+\quad\not\equiv\quad 
+\exists y\, \forall x\; Q(x,y).
+\]
+
+\end{example}
+
+Predicates can involve more variables, and more quantifiers. \\
+
+Let
+\[
+R(x,y,z) \equiv x + y = z.
+\]
+
+Consider the statement:
+\[
+\forall z\, \exists x\, \exists y\, R(x,y,z).
+\]
+
+This reads: “For every real number \(z\), there exist numbers \(x\) and \(y\) such that \(x + y = z\).” \\
+
+This is true: for example, choose \(x = 0\) and \(y = z\). \\
+
+Now compare with:
+\[
+\exists x\, \forall z\, \exists y\, R(x,y,z).
+\]
+
+This says: “There exists a single \(x\) such that for every \(z\), we can find a \(y\) making \(x + y = z\).” \\
+
+This is also true: if we pick \(x = 0\), then choosing \(y = z\) works for every \(z\). \\
+
+But now consider:
+\[
+\exists x\, \exists y\, \forall z\, R(x,y,z).
+\]
+
+This says: “There exist numbers \(x\) and \(y\) such that \(x + y = z\) for every real number \(z\).” \\
+
+This is false, because one fixed sum cannot equal all possible real numbers. \\
+
+These examples illustrate how different combinations of quantifiers fundamentally change the meaning of a statement. \\
+
+Once again: \textbf{Quantifiers of the same type commute, but \(\forall\) and \(\exists\) almost never do. } \\
+
+Formally:
+\[
+\forall x\, \forall y\, P(x,y) \equiv \forall y\, \forall x\, P(x,y),
+\]
+\[
+\exists x\, \exists y\, P(x,y) \equiv \exists y\, \exists x\, P(x,y),
+\]
+\[
+\forall x\, \exists y\, P(x,y) \not\equiv \exists y\, \forall x\, P(x,y).
+\]
+
+Quantifier order becomes especially important in calculus (limits), analysis (continuity), and algebra (definitions involving uniqueness).  
+Understanding these structures now will make those ideas much easier later.
+
+\paragraph{Negating Quantified Statements}
+
+Negation interacts with quantifiers in predictable and important ways.  
+Intuitively, saying "it is not the case that something holds for all \(x\)" means "there exists some \(x\) for which it fails."  
+Similarly, negating "there exists an \(x\)" means "for all \(x\), it does not hold." \\
+
+The formal rules are:
+
+\[
+\neg(\forall x\, P(x)) \equiv \exists x\, \neg P(x),
+\]
+\[
+\neg(\exists x\, P(x)) \equiv \forall x\, \neg P(x).
+\]
+
+\begin{example}
+Negate the statement "Every number is positive."  
+This statement is
+\[
+\forall x\, (x > 0).
+\]
+Using the rule above:
+\[
+\neg(\forall x\, (x > 0)) \equiv \exists x\, (x \le 0).
+\]
+So the negation is: "There exists a number that is not positive."
+\end{example}
+
+\begin{example}
+Negate the statement "There exists a number whose square is 2."
+This statement is
+\[
+\exists x\, (x^2 = 2).
+\]
+Its negation is
+\[
+\forall x\, (x^2 \ne 2).
+\]
+That is: "Every number has a square different from 2."
+\end{example}
+
+Now that we have introduced the principles behind predicate logic, we can start to use them to prove statements.
+
+\subsection{Proof Techniques}
+
+Mathematical proofs are precise logical arguments that demonstrate why a statement must be true.  
+The logical structures introduced earlier — statements, implications, predicates, and quantifiers — form the backbone of all proofs.
+
+Many of the statements we encounter have the form
+\[
+p \Rightarrow q,
+\]
+meaning "if \(p\) is true, then \(q\) must also be true."  
+There are several standard ways to prove such implications.  
+In this section we introduce the most common proof techniques: direct proof, proof by contradiction, proof by contrapositive, and mathematical induction.
+
+\subsubsection{Direct Proof}
+
+A direct proof is the most natural way to prove an implication \(p \Rightarrow q\).  
+The idea is simple: assume that \(p\) is true, and then use logical steps to deduce that \(q\) must be true as well.
+
+In logical notation, the structure looks like this:
+\[
+p \;\Rightarrow\; p_1 \;\Rightarrow\; p_2 \;\Rightarrow\; \cdots \;\Rightarrow\; q.
+\]
+If each step is valid, then the truth of \(p\) guarantees the truth of \(q\).
+
+\begin{example}
+\textbf{If \(n\) is even, then \(n^2\) is even.}
+
+Let \(p\): "\(n\) is even" and \(q\): "\(n^2\) is even."
+
+\medskip
+\textit{Proof.}  
+Assume \(n\) is even.  
+By definition, this means there exists an integer \(k\) such that \(n = 2k\).  
+Then
+\[
+n^2 = (2k)^2 = 4k^2 = 2(2k^2),
+\]
+which is a multiple of 2, and hence even.  
+Thus from the assumption \(n\) is even, we have deduced that \(n^2\) is even.  
+Therefore \(p \Rightarrow q\).\hfill\(\square\)
+\end{example}
+
+Direct proofs are often the simplest method when the conclusion naturally follows from the assumptions using definitions and algebraic manipulation.
+
+\subsubsection{Proof by Contradiction}
+
+Proof by contradiction is useful when a direct argument is difficult or impossible to find.  
+To prove an implication \(p \Rightarrow q\) indirectly, we assume the opposite of what we want to prove happens:  
+\[
+\text{Assume } p \text{ and } \neg q.
+\]
+If this assumption leads to a contradiction, then it cannot occur — meaning \(p \Rightarrow q\) must be true.
+
+The logical principle underlying this technique is:
+\[
+(p \land \neg q) \Rightarrow \text{False}
+\quad\Longleftrightarrow\quad
+p \Rightarrow q.
+\]
+
+\begin{example}
+\textbf{The number \(\sqrt{2}\) is irrational.}
+
+Let \(p\): "\(\sqrt{2}\) is rational."  
+We aim to show that \(p\) is false by assuming it and deriving a contradiction.
+
+\medskip
+\textit{Proof.}  
+Assume \(\sqrt{2}\) is rational.  
+Then we can write
+\[
+\sqrt{2} = \frac{a}{b},
+\]
+where \(a\) and \(b\) are integers with no common factor, and \(b \ne 0\).  
+Squaring both sides gives:
+\[
+2 = \frac{a^2}{b^2}
+\quad\Rightarrow\quad
+a^2 = 2b^2.
+\]
+Thus \(a^2\) is even, so \(a\) must be even.  
+Write \(a = 2k\).  
+Then
+\[
+a^2 = 4k^2 = 2b^2
+\quad\Rightarrow\quad
+b^2 = 2k^2,
+\]
+so \(b^2\) is even and therefore \(b\) is even.
+
+But now both \(a\) and \(b\) are even, contradicting the assumption that the fraction was in lowest terms.  
+Since our assumption leads to a contradiction, it must be false: \(\sqrt{2}\) is irrational.\hfill\(\square\)
+\end{example}
+
+Proof by contradiction is powerful because contradictions cannot be true: if your assumptions lead to one, at least one assumption must be false.
+
+\subsubsection{Proof by Contrapositive}
+
+Every implication \(p \Rightarrow q\) is logically equivalent to its \emph{contrapositive}
+\[
+\neg q \Rightarrow \neg p.
+\]
+Sometimes the contrapositive is much easier to prove than the original implication.
+
+Logically:
+\[
+p \Rightarrow q \;\equiv\; \neg q \Rightarrow \neg p.
+\]
+
+\begin{example}
+\textbf{If \(n^2\) is even, then \(n\) is even.}
+
+Let \(p\): "\(n^2\) is even" and \(q\): "\(n\) is even."  
+We prove the contrapositive:
+\[
+\neg q \Rightarrow \neg p.
+\]
+
+\medskip
+\textit{Proof.}  
+Assume \(n\) is odd.  
+Then \(n = 2k + 1\) for some integer \(k\).  
+Squaring gives:
+\[
+n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1,
+\]
+which is odd.  
+Thus \(n\) odd implies \(n^2\) odd.  
+This proves \(\neg q \Rightarrow \neg p\), and therefore \(p \Rightarrow q\).\hfill\(\square\)
+\end{example}
+
+Contrapositive proofs are especially effective when the structure of the conclusion makes the direct approach awkward, but the negation of the conclusion combines cleanly with definitions.
+
+\subsubsection{Proof by Induction}
+
+Proof by induction is used for statements involving a universally quantified natural number:
+\[
+\forall n\, P(n).
+\]
+
+Note that \(n\) is any natural number here. \\
+
+The idea is to show that the predicate \(P(n)\) holds for the first number, and that whenever it holds for one natural number, it must also hold for the next.  
+Logically, induction is based on the implication:
+\[
+P(1) \land \forall n\, (P(n) \Rightarrow P(n+1))
+\;\Rightarrow\;
+\forall n\, P(n).
+\]
+
+There are two steps:
+
+\begin{enumerate}
+  \item \textbf{Base Case:} Prove \(P(1)\).
+  \item \textbf{Inductive Step:} Prove \(P(n) \Rightarrow P(n+1)\).
+\end{enumerate}
+
+If both steps hold, then \(P(n)\) must be true for all natural numbers.
+
+\begin{example}
+\textbf{For all \(n\),}
+\[
+1 + 2 + \cdots + n = \frac{n(n+1)}{2}.
+\]
+
+Let \(P(n)\): "\(1 + 2 + \cdots + n = \frac{n(n+1)}{2}\)."
+
+\medskip
+\textit{Base Case.}  
+For \(n = 1\),
+\[
+1 = \frac{1\cdot 2}{2},
+\]
+so \(P(1)\) is true.
+
+\medskip
+\textit{Inductive Step.}  
+Assume \(P(n)\) is true, i.e.
+\[
+1 + 2 + \cdots + n = \frac{n(n+1)}{2}.
+\]
+We must show \(P(n+1)\):
+\[
+1 + 2 + \cdots + n + (n+1) = \frac{(n+1)(n+2)}{2}.
+\]
+Starting from the inductive hypothesis:
+\[
+1 + \cdots + n + (n+1)
+= \frac{n(n+1)}{2} + (n+1)
+= (n+1)\left(\frac{n}{2} + 1\right)
+= (n+1)\frac{n+2}{2}
+= \frac{(n+1)(n+2)}{2}.
+\]
+Thus \(P(n+1)\) follows from \(P(n)\), completing the inductive step.
+
+Since both the base case and inductive step hold, induction implies \(\forall n\, P(n)\).\hfill\(\square\)
+\end{example}
+
+Induction is one of the most elegant applications of predicate logic: the inductive step is simply an implication between two statements \(P(n)\) and \(P(n+1)\), and the principle of induction tells us that chaining these implications covers all natural numbers.
+

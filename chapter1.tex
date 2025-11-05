@@ -1,0 +1,1231 @@
+\section{Algebra}
+
+\subsection{Algebraic Expressions}
+
+When we describe relationships between quantities, we often do not know their exact values beforehand.  
+For a simple example, imagine we are analyzing the cost of making a product: each item costs 10 dollars to make, and we produce \( x \) items.  
+The total cost can be described as
+
+\[
+10x
+\]
+
+If there is also a fixed cost of 100 dollars for setup or rent, we can write
+
+\[
+10x + 100
+\]
+
+This is an \textbf{algebraic expression}: it represents a relationship that includes unknown values, using variables and arithmetic operations to describe how quantities relate to one another.
+
+\begin{definition}
+An \textbf{algebraic expression} is a combination of numbers, variables, and arithmetic operations (such as addition, subtraction, multiplication, division, and exponentiation).  
+We note that:
+
+\begin{itemize}
+  \item A \textbf{variable} is a symbol that represents an unknown or changeable value.
+  \item A \textbf{constant} is a fixed value that does not change.
+\end{itemize}
+\end{definition}
+
+Additionally, constants that multiply variables are often called \textbf{coefficients}.
+
+The specific choice of variable name usually does not matter.
+However, there are some conventions that you should follow — for example, mathematicians often use \( x, y, z \) for unknown numbers, \( \alpha, \beta, \gamma \) for angles, and \( f, g, h \) for functions (we will discuss these things later). \\
+
+Depending on the expression, you can substitute almost anything for a variable — numbers, other algebraic expressions, or even more complex mathematical objects such as vectors or matrices.
+In general, variables are simply placeholders.
+However, for now we will restrict substitutions to numbers or algebraic expressions consisting of numbers and variables, which ensures that all the familiar laws of algebra (like commutativity, associativity, and distributivity) remain valid.
+
+\begin{example}
+Consider the expression
+\[
+3x^2 + 2x + 1.
+\]
+
+This represents a \textbf{quadratic relationship} between the variable \( x \) and the resulting value.  
+Here:
+
+\begin{itemize}
+  \item The variable is \( x \),
+  \item The coefficients are \( 3 \) and \( 2 \),
+  \item The constant term is \( 1 \).
+\end{itemize}
+\end{example}
+
+\begin{exercise}
+A taxi company charges a base fare of \$5 plus \$2 per kilometer driven.  
+Write an algebraic expression for the total cost of a ride that covers \( x \) kilometers.
+\end{exercise}
+
+We can perform several transformations on algebraic expressions to simplify or rearrange them without changing their meaning.  
+These transformations rely on the fundamental \textbf{laws of algebra}.
+
+\paragraph{Simplification}
+Simplification involves combining like terms and reducing common factors:
+
+\begin{align*}
+3x + 5x &= 8x, \\
+6x^2 \,/\, 3x &= 2x.
+\end{align*}
+
+\paragraph{Commutative Laws}
+The order of addition or multiplication does not matter:
+
+\[
+a + b = b + a, \quad ab = ba.
+\]
+
+\begin{example}
+\[
+2x + 3y = 3y + 2x, \quad 4 \cdot x = x \cdot 4.
+\]
+\end{example}
+
+\paragraph{Associative Laws}
+When adding or multiplying three or more terms, grouping does not affect the result.
+
+\[
+(a + b) + c = a + (b + c), \quad (ab)c = a(bc).
+\]
+
+\begin{example}
+\[
+(2 + 3) + 4 = 2 + (3 + 4) = 9, \quad (2 \cdot 3) \cdot 4 = 2 \cdot (3 \cdot 4) = 24.
+\]
+\end{example}
+
+\paragraph{Distributive Law}
+Multiplication distributes over addition or subtraction.
+
+\[
+a(b + c) = ab + ac.
+\]
+
+\begin{example}
+\[
+2(x + 3) = 2x + 6.
+\]
+\end{example}
+
+\paragraph{Expansion of Products}
+Using the distributive law repeatedly, we can expand expressions such as
+\[
+(a + b)(c + d) = ac + ad + bc + bd.
+\]
+
+\begin{example}
+\[
+(x + 2)(x + 3) = x^2 + 3x + 2x + 6 = x^2 + 5x + 6.
+\]
+\end{example}
+
+\paragraph{Binomial Formulas}
+Certain special products occur so often that they are worth knowing by heart:
+
+\begin{align*}
+(a + b)^2 &= a^2 + 2ab + b^2, \\
+(a - b)^2 &= a^2 - 2ab + b^2, \\
+(a + b)(a - b) &= a^2 - b^2.
+\end{align*}
+
+These are called the \textbf{binomial formulas}.
+
+\begin{example}
+\[
+(3x + 2)^2 = 9x^2 + 12x + 4.
+\]
+\end{example}
+
+\begin{example}
+\[
+(x + 5)(x - 5) = x^2 - 25.
+\]
+\end{example}
+
+\paragraph{Factoring (Reverse Direction)}
+The binomial formulas also work in reverse, allowing us to \emph{factor} expressions:
+
+\begin{align*}
+a^2 + 2ab + b^2 &= (a + b)^2, \\
+a^2 - b^2 &= (a + b)(a - b).
+\end{align*}
+
+\begin{example}
+\[
+x^2 + 6x + 9 = (x + 3)^2.
+\]
+\end{example}
+
+\begin{example}
+\[
+4x^2 - 9 = (2x + 3)(2x - 3).
+\]
+\end{example}
+
+\begin{exercise}
+Simplify the following expressions as much as possible:
+\begin{enumerate}
+  \item \( 5x + 3x - 4 \)
+  \item \( 2(x + 5) - 3x \)
+  \item \( (x + 2)^2 - (x - 2)^2 \)
+\end{enumerate}
+\end{exercise}
+
+\subsection{Equations}
+
+\subsubsection{Definition and Examples}
+
+When working with algebraic expressions, we often want to find values for the variables that make two expressions represent the same quantity.  
+For example, suppose we are comparing two different mobile data plans:
+
+\begin{itemize}
+  \item Plan A costs \$20 per month plus \$2 per gigabyte of data: \( 20 + 2x \)
+  \item Plan B costs \$35 per month plus \$1 per gigabyte of data: \( 35 + x \)
+\end{itemize}
+
+We might want to know when both plans cost the same amount.  
+To express this, we set the two expressions equal to each other:
+\[
+20 + 2x = 35 + 1x.
+\]
+Here, we are asking for which value of \( x \) both expressions have the same value.
+
+\begin{definition}
+An \textbf{equation} is a statement that two algebraic expressions are equal.  
+Solving an equation means finding all values of the variable(s) that make the statement true.  
+Such values are called the \textbf{solutions} or \textbf{roots} of the equation.
+\end{definition}
+
+\begin{example}
+Consider the equation
+\[
+20 + 2x = 35 + x,
+\]
+
+At \( x = 15 \), both sides are the same which means that \( x = 15 \) is a solution to the equation.
+Therefore, the plans will cost the same amount when 15 gigabytes of data are used.
+\end{example}
+
+\begin{exercise}
+A gym charges a membership fee of \$30 plus \$5 per class attended, while a different gym charges a flat rate of \$80 per month.  
+Write and solve an equation to find how many classes make the two options cost the same.
+\end{exercise}
+
+When solving equations, it is important to understand which transformations preserve the set of solutions.  
+An equation expresses equality between two sides, so any operation that maintains equality will not change its solutions.  
+The following transformations are always valid (provided they are applied to both sides and do not introduce undefined operations):
+
+\begin{itemize}
+  \item \textbf{Addition or subtraction:}  
+  Adding or subtracting the same expression on both sides of an equation preserves equality.  
+  \[
+  a = b \;\Rightarrow\; a + c = b + c.
+  \]
+  Example: \( x + 2 = 5 \Rightarrow x = 3 \) is the same as \( x + 2 - 2 = 5 - 2 \).
+
+  \item \textbf{Multiplication or division by a nonzero constant:}  
+  Multiplying or dividing both sides of an equation by the same nonzero number does not change the solution set.  
+  \[
+  a = b \;\Rightarrow\; ca = cb \quad \text{for } c \neq 0.
+  \]
+  Example: \( 3x = 6 \Rightarrow x = 2 \) is obtained by dividing both sides by 3.
+\end{itemize}
+
+However, some transformations are not always valid:
+
+\begin{itemize}
+    \item \textbf{Raising to a power or taking roots:}
+    Raising both sides of an equation to a power or taking the root of both sides can introduce extraneous solutions or lose correct solutions.
+    For example, squaring both sides of \( x = -2 \) gives \( x^2 = 4 \), which also holds for \( x = 2 \).
+    On the other hand, taking the square root of both sides of \( x^2 = 4 \) gives \( x = 2 \), which loses the solution \( x = -2 \).
+    
+    \item \textbf{Multiplying both sides by a variable:}  
+    Multiplying both sides of an equation by an expression that contains a variable can change the set of solutions, because the expression might be zero for some values of the variable.  
+    For example, start with the equation
+    \[
+    x = 2.
+    \]
+    If we multiply both sides by \( x \), we get
+    \[
+    x^2 = 2x.
+    \]
+    The new equation can be rewritten as
+    \[
+    x^2 - 2x = 0 \quad \Rightarrow \quad x(x - 2) = 0,
+    \]
+    which has the solutions \( x = 0 \) and \( x = 2 \).  
+    However, the original equation only had the solution \( x = 2 \).  
+    The new solution \( x = 0 \) is \emph{extraneous} — it was introduced by multiplying by \( x \), which can be zero.  
+    Therefore, whenever we multiply or divide by an expression that may be zero, we must explicitly state that the expression is nonzero and check all resulting solutions in the original equation.
+
+    \item \textbf{Operations involving denominators:}  
+    This is a special case of multiplying both sides by an expression that contains a variable.  
+    When an equation includes fractions, it is often convenient to eliminate denominators by multiplying through by them — but this operation is only valid if the denominators are nonzero.  
+    If we ignore this restriction, we may introduce false (extraneous) solutions.
+
+    For example, consider the equation
+    \[
+    \frac{x}{x - 3} = \frac{3}{x - 3}.
+    \]
+    Multiplying both sides by \( x - 3 \) gives
+    \[
+    x = 3.
+    \]
+    However, \( x = 3 \) makes the original equation undefined because it causes division by zero.  
+    The equation actually has no valid solution.  
+    This demonstrates that before multiplying by a denominator, we must first determine for which values of the variable the denominator is zero and exclude those values from the possible solution set.
+\end{itemize}
+
+\subsubsection{Linear Equations}
+
+A \textbf{linear equation} in one variable has the form
+\[
+ax + b = 0,
+\]
+where \( a \) and \( b \) are constants, and \( a \neq 0 \). \\
+
+To find the value of \( x \) that makes this equation true, we isolate \( x \) using the basic transformations of equations.  
+Subtract \( b \) from both sides:
+\[
+ax = -b,
+\]
+and then divide both sides by \( a \) (which is allowed since \( a \neq 0 \)):
+\[
+x = -\frac{b}{a}.
+\]
+
+This gives the general \textbf{solution formula} for any linear equation in one variable.
+
+\begin{example}
+Solve \( 3x - 9 = 0 \):
+\[
+x = -\frac{-9}{3} = 3.
+\]
+\end{example}
+
+\begin{example}
+Solve \( 5x + 10 = 0 \):
+\[
+x = -\frac{10}{5} = -2.
+\]
+\end{example}
+
+Linear equations are therefore the simplest type of equations to solve — simply isolate the variable on one side of the equation.
+
+\subsubsection{Quadratic Equations}
+
+A \textbf{quadratic equation} is an equation of the form
+\[
+ax^2 + bx + c = 0,
+\]
+where \( a, b, c \) are constants and \( a \neq 0 \). \\
+
+There are several methods to solve quadratic equations.
+
+\paragraph{(a) Solving by Factoring}
+
+If the quadratic expression can be factored, we can use the \emph{zero product property}:
+\[
+\text{If } pq = 0, \text{ then } p = 0 \text{ or } q = 0.
+\]
+
+\begin{example}
+Solve \( x^2 - 5x + 6 = 0 \).
+\[
+(x - 2)(x - 3) = 0 \Rightarrow x = 2 \text{ or } x = 3.
+\]
+\end{example}
+
+\paragraph{(b) Solving by Completing the Square}
+
+The idea is to rewrite the equation so that one side becomes a perfect square.
+
+\begin{example}
+Solve \( x^2 + 6x + 5 = 0 \).
+
+\begin{align*}
+    x^2 + 6x &= -5 \\
+    x^2 + 6x + 9 &= 4 \qquad (\text{added } 9 \text{ to both sides}) \\
+    (x + 3)^2 &= 4 \\
+    x + 3 &= \pm 2 \\
+    x &= -3 \pm 2
+    \end{align*}
+    
+
+Hence, \( x = -1 \) or \( x = -5 \).
+\end{example}
+
+When taking square roots, it is important to remember that
+\[
+\sqrt{x^2} = \pm x,
+\]
+since both \( x \) and \( -x \) squared give the same result.
+
+\paragraph{(c) Deriving the Quadratic Formula}
+
+Often, it is not convenient to factor a quadratic equation.
+Luckily, we can derive a fully general solution formula for quadratic equations. \\
+
+Starting from the general form \( ax^2 + bx + c = 0 \):
+\begin{align*}
+ax^2 + bx + c &= 0 \\
+x^2 + \frac{b}{a}x + \frac{c}{a} &= 0 \\
+x^2 + \frac{b}{a}x &= -\frac{c}{a} \\
+x^2 + \frac{b}{a}x + \frac{b^2}{4a^2} &= \frac{b^2 - 4ac}{4a^2} \qquad (\text{added } \frac{b^2}{4a^2} \text{ to both sides}) \\
+\left(x + \frac{b}{2a}\right)^2 &= \frac{b^2 - 4ac}{4a^2} \\
+x + \frac{b}{2a} &= \pm \frac{\sqrt{b^2 - 4ac}}{2a} \\
+x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+\end{align*}
+
+This is the \textbf{quadratic formula}:
+\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+\]
+
+The term under the square root, \( D = b^2 - 4ac \), is called the \textbf{discriminant}.  
+It determines the number and type of roots:
+\[
+\begin{cases}
+D > 0 &\Rightarrow \text{two distinct real roots},\\
+D = 0 &\Rightarrow \text{one real root},\\
+D < 0 &\Rightarrow \text{no real roots}.
+\end{cases}
+\]
+
+\begin{example}
+Solve \( 2x^2 - 4x - 6 = 0 \).
+\[
+x = \frac{-(-4) \pm \sqrt{(-4)^2 - 4(2)(-6)}}{2(2)} = \frac{4 \pm \sqrt{16 + 48}}{4} = \frac{4 \pm 8}{4}.
+\]
+Hence, \( x = 3 \) or \( x = -1 \).
+\end{example}
+
+\begin{exercise}
+Solve the following quadratic equations:
+\begin{enumerate}
+  \item \( x^2 - 4x + 4 = 0 \)
+  \item \( x^2 + 2x - 15 = 0 \)
+  \item \( 3x^2 - 5x - 2 = 0 \)
+\end{enumerate}
+\end{exercise}
+
+Let's look at a practical example:
+
+\begin{example}
+A ball is thrown upward from the ground with an initial velocity of 20 m/s.  
+Its height (in meters) after \( t \) seconds is roughly described by the equation
+\[
+h = -5t^2 + 20t.
+\]
+When does the ball return to the ground? \\
+
+We solve \( h = 0 \):
+\[
+-5t^2 + 20t = 0 \Rightarrow -5t(t - 4) = 0.
+\]
+
+Thus, \( t = 0 \) or \( t = 4 \).  
+The ball hits the ground again after 4 seconds.
+\end{example}
+
+\subsubsection{Higher-Order Polynomial Equations}
+
+So far, we have studied linear (\( ax + b = 0 \)) and quadratic (\( ax^2 + bx + c = 0 \)) equations.  
+Both are examples of \textbf{polynomial equations}, meaning that they are built from powers of the variable with constant coefficients. \\
+
+In general, a \textbf{polynomial equation} has the form
+\[
+a_n x^n + a_{n-1}x^{n-1} + \dots + a_1x + a_0 = 0,
+\]
+where \( a_n \neq 0 \) and \( n \) is called the \textbf{degree} of the polynomial.  
+The degree corresponds to the highest power of \( x \) appearing in the equation.  
+Polynomials of higher degree often model more complex relationships, such as those found in physics, economics, or data fitting.
+
+\begin{example}
+A \textbf{cubic equation} (degree 3) has the general form
+\[
+ax^3 + bx^2 + cx + d = 0.
+\]
+Example:
+\[
+x^3 - 6x^2 + 11x - 6 = 0.
+\]
+By inspection (i.e. Wolfram Alpha), this can be factored as
+\[
+(x - 1)(x - 2)(x - 3) = 0,
+\]
+so the roots are \( x = 1, 2, 3 \).
+\end{example}
+
+\begin{example}
+A \textbf{quartic equation} (degree 4) has the general form
+\[
+ax^4 + bx^3 + cx^2 + dx + e = 0.
+\]
+Example:
+\[
+x^4 - 5x^2 + 4 = 0.
+\]
+We can solve this by substitution: let \( y = x^2 \), giving
+\[
+y^2 - 5y + 4 = 0 \Rightarrow (y - 1)(y - 4) = 0.
+\]
+Thus \( y = 1 \) or \( y = 4 \), and therefore \( x = \pm 1 \) or \( x = \pm 2 \).
+\end{example}
+
+\begin{example}
+A polynomial of degree 7 (a \textbf{seventh-degree} or \textbf{septic} equation) has the form
+\[
+a_7x^7 + a_6x^6 + a_5x^5 + a_4x^4 + a_3x^3 + a_2x^2 + a_1x + a_0 = 0.
+\]
+For instance:
+\[
+x^7 - 2x^5 + x^3 - 4x + 1 = 0.
+\]
+Such an equation generally cannot be solved by simple algebraic manipulations.
+\end{example}
+
+For \textbf{cubic} and \textbf{quartic} equations, there are fully general formulas that can be used to find the roots.  
+However, starting with degree five (\textbf{quintic}) and higher, there is no general algebraic formula for the roots — a result known as the \textbf{Abel–Ruffini theorem}.  
+In practice, such equations are usually solved with \textbf{numerical methods}, such as iteration or computer-based approximation. \\
+
+Luckily, for us most relationships are linear, quadratic, or cubic, so we will not need to worry about higher-degree polynomial equations too much. \\
+
+\subsubsection{Other Equations}
+
+Apart from polynomial equations, there are other types of equations that are important to know about.
+
+\paragraph{Rational Equations}
+
+A \textbf{rational equation} is an equation that contains one or more fractions with variables in the denominator.  
+For example:
+\[
+\frac{2x + 3}{x - 1} = 4.
+\]
+To solve rational equations, the general strategy is:
+\begin{enumerate}
+  \item Determine all values that make any denominator zero — these must be excluded from the possible solution set.
+  \item Multiply both sides of the equation by the least common denominator (LCD) to eliminate the fractions.
+  \item Solve the resulting polynomial equation.
+  \item Check all found solutions against the possible solution set restrictions.
+\end{enumerate}
+
+\begin{example}
+Solve
+\[
+\frac{x}{x - 3} = \frac{3}{x - 3}.
+\]
+Step 1: The denominator \( x - 3 \) cannot be zero, so \( x \neq 3 \). \\
+
+Step 2: Multiply both sides by \( x - 3 \):
+\[
+x = 3.
+\]
+Step 3: The apparent solution \( x = 3 \) must be excluded because it makes the denominator zero.  
+Hence, the equation has \emph{no valid solution}.
+\end{example}
+
+\begin{example}
+Solve
+\[
+\frac{2x + 3}{x - 1} = 4.
+\]
+Step 1: \( x \neq 1 \).  
+Step 2: Multiply both sides by \( x - 1 \):
+\[
+2x + 3 = 4(x - 1) \Rightarrow 2x + 3 = 4x - 4.
+\]
+Step 3: Simplify and solve:
+\[
+7 = 2x \Rightarrow x = \frac{7}{2}.
+\]
+Step 4: Check \( x = \frac{7}{2} \neq 1 \), so it is valid.
+\end{example}
+
+\begin{exercise}
+Solve the following rational equations:
+\begin{enumerate}
+  \item \( \displaystyle \frac{x + 2}{x - 1} = 3 \)
+  \item \( \displaystyle \frac{1}{x} + \frac{1}{x + 2} = 1 \)
+  \item \( \displaystyle \frac{2x}{x - 4} = 5 \)
+\end{enumerate}
+\end{exercise}
+
+\paragraph{Radical Equations}
+
+A \textbf{radical equation} contains a variable inside a square root or higher root.  
+For example:
+\[
+\sqrt{x + 1} = x - 1.
+\]
+To solve a radical equation:
+\begin{enumerate}
+  \item Isolate the radical term on one side.
+  \item Raise both sides to the appropriate power (e.g. square both sides for a square root).
+  \item Solve the resulting equation.
+  \item Check all potential solutions in the \emph{original} equation, because squaring can introduce extraneous solutions.
+\end{enumerate}
+
+\begin{example}
+Solve
+\[
+\sqrt{x + 1} = x - 1.
+\]
+Step 1: Both sides are already isolated. \\
+
+Step 2: Square both sides:
+\[
+x + 1 = (x - 1)^2 = x^2 - 2x + 1.
+\]
+Step 3: Simplify:
+\[
+0 = x^2 - 3x.
+\]
+Step 4: Factor:
+\[
+x(x - 3) = 0 \Rightarrow x = 0 \text{ or } x = 3.
+\]
+Step 5: Check each in the original equation:
+\begin{itemize}
+  \item For \( x = 0 \): \( \sqrt{1} = -1 \) → false.
+  \item For \( x = 3 \): \( \sqrt{4} = 2 \) → true.
+\end{itemize}
+Therefore, the only valid solution is \( x = 3 \).
+\end{example}
+
+\begin{exercise}
+Solve and check your solutions:
+\begin{enumerate}
+  \item \( \sqrt{x + 2} = x \)
+  \item \( \sqrt{2x - 1} = x - 3 \)
+  \item \( \sqrt{x + 4} = 2x - 2 \)
+\end{enumerate}
+\end{exercise}
+
+\paragraph{Absolute Value Equations}
+
+Remember that the \textbf{absolute value} of a number, denoted \( |x| \), represents its distance from zero on the number line.  
+Therefore, \( |x| = a \) means that \( x \) can be \( a \) units away from zero in either direction:
+\[
+|x| = a \quad \Rightarrow \quad x = a \text{ or } x = -a.
+\]
+When solving equations involving absolute values, we typically split the equation into two separate cases and solve each one.
+
+\begin{example}
+Solve
+\[
+|x - 3| = 5.
+\]
+Split into two cases:
+\[
+x - 3 = 5 \quad \text{or} \quad x - 3 = -5.
+\]
+Solve each:
+\[
+x = 8 \quad \text{or} \quad x = -2.
+\]
+\end{example}
+
+\begin{example}
+Solve
+\[
+|2x - 7| = 3.
+\]
+Two cases:
+\[
+2x - 7 = 3 \Rightarrow x = 5, \qquad 2x - 7 = -3 \Rightarrow x = 2.
+\]
+Hence \( x = 2 \) or \( x = 5 \).
+\end{example}
+
+If the equation has an absolute value on both sides, for example \( |x + 4| = |2x - 1| \),  
+we again split into cases using the fact that if \( |A| = |B| \), then either \( A = B \) or \( A = -B \).
+
+\begin{example}
+\[
+|x + 4| = |2x - 1|.
+\]
+
+\textbf{Case 1:} \( x + 4 = 2x - 1 \Rightarrow x = 5. \) \\[6pt]
+
+\textbf{Case 2:} \( x + 4 = -(2x - 1) \Rightarrow x + 4 = -2x + 1 \Rightarrow 3x = -3 \Rightarrow x = -1. \) \\[6pt]
+
+Hence, the solutions are \( x = 5 \) and \( x = -1. \)
+\end{example}
+
+\begin{exercise}
+Solve the following absolute value equations:
+\begin{enumerate}
+  \item \( |x - 4| = 6 \)
+  \item \( |3x + 1| = 7 \)
+  \item \( |x + 2| = |2x - 5| \)
+\end{enumerate}
+\end{exercise}
+
+\subsection{Systems of Equations}
+
+\subsubsection{Definition and Examples}
+
+So far, we have looked at single equations with one unknown.  
+In many real situations, however, we need to find values of two or more unknowns that satisfy multiple conditions at once.  
+This naturally leads to a \textbf{system of equations}.  
+
+For example, suppose we know the following two facts about two numbers \( x \) and \( y \):
+
+\begin{itemize}
+  \item Their sum is 11.
+  \item Their difference is 3.
+\end{itemize}
+
+We can express these statements as two equations:
+\[
+\begin{cases}
+x + y = 11, \\
+x - y = 3.
+\end{cases}
+\]
+Here, both equations involve the same two variables, \( x \) and \( y \).  
+Solving the system means finding the values of \( x \) and \( y \) that satisfy both equations simultaneously.  
+In this particular case, \( x = 7 \) and \( y = 4 \) form the \textbf{solution} to the system.
+
+\begin{definition}
+A \textbf{system of equations} is a set of two or more equations involving the same variables.  
+A \textbf{solution set} of the system is a set of variable values that satisfy all equations at the same time.  
+Solving a system means finding all such values.
+\end{definition}
+
+\subsubsection{Solving a System of Two Linear Equations}
+
+A \textbf{linear system} in two variables \( x \) and \( y \) has the form
+\[
+\begin{cases}
+a_1x + b_1y = c_1, \\
+a_2x + b_2y = c_2.
+\end{cases}
+\]
+
+We can solve this system by substitution or elimination. \\
+
+Substitution involves solving one equation for one variable and substituting the result into the other equation:
+
+\begin{example}
+Solve
+\[
+\begin{cases}
+x + y = 10, \\
+2x - y = 5.
+\end{cases}
+\]
+
+From the first equation: \( y = 10 - x \).  
+Substitute into the second:
+\[
+2x - (10 - x) = 5 \Rightarrow 3x = 15 \Rightarrow x = 5.
+\]
+Then \( y = 10 - 5 = 5 \).  
+Hence, the solution is \( (x, y) = (5, 5) \).
+\end{example}
+
+Elimination involves adding or subtracting the equations to eliminate one variable:
+
+\begin{example}
+Solve
+\[
+\begin{cases}
+3x + y = 7, \\
+2x - y = 3.
+\end{cases}
+\]
+
+Add the equations to eliminate \( y \):
+\[
+(3x + y) + (2x - y) = 7 + 3 \Rightarrow 5x = 10 \Rightarrow x = 2.
+\]
+Substitute back: \( 3(2) + y = 7 \Rightarrow y = 1. \)
+Solution: \( (x, y) = (2, 1) \).
+\end{example}
+
+\begin{exercise}
+Solve each system:
+\begin{enumerate}
+  \item 
+  \(
+  \begin{cases}
+  3x + 2y = 12, \\
+  2x - y = 1.
+  \end{cases}
+  \)
+  \item 
+  \(
+  \begin{cases}
+  y = 2x + 1, \\
+  3y = 6x + 3.
+  \end{cases}
+  \)
+\end{enumerate}
+\end{exercise}
+
+\subsubsection{Solving a System of Three Linear Equations}
+
+A linear system in three variables has the general form:
+\[
+\begin{cases}
+a_1x + b_1y + c_1z = d_1, \\
+a_2x + b_2y + c_2z = d_2, \\
+a_3x + b_3y + c_3z = d_3.
+\end{cases}
+\]
+
+\begin{example}
+Solve
+\[
+\begin{cases}
+x + y + z = 6, \\
+2x - y + z = 3, \\
+x + 2y - z = 3.
+\end{cases}
+\]
+
+From the first equation: \( z = 6 - x - y \).  
+Substitute into the other two:
+\[
+\begin{cases}
+2x - y + (6 - x - y) = 3, \\
+x + 2y - (6 - x - y) = 3.
+\end{cases}
+\]
+
+Simplify:
+\[
+\begin{cases}
+x - 2y = -3, \\
+2x + 3y = 9.
+\end{cases}
+\]
+Solve this smaller system (by elimination, for example):
+Multiply the first by 3: \( 3x - 6y = -9 \).  
+Subtract from the second:
+\[
+(2x + 3y) - (3x - 6y) = 9 - (-9) \Rightarrow -x + 9y = 18 \Rightarrow x = 9y - 18.
+\]
+Substitute \( x \) into \( x - 2y = -3 \):
+\[
+(9y - 18) - 2y = -3 \Rightarrow 7y = 15 \Rightarrow y = \frac{15}{7}.
+\]
+Then \( x = 9\left(\frac{15}{7}\right) - 18 = \frac{135 - 126}{7} = \frac{9}{7} \).  
+Finally, \( z = 6 - x - y = 6 - \frac{9}{7} - \frac{15}{7} = \frac{18}{7}. \)
+
+Thus, \( (x, y, z) = \left( \frac{9}{7}, \frac{15}{7}, \frac{18}{7} \right). \)
+\end{example}
+
+\paragraph{General Strategy for Solving Systems}
+For any system of equations:
+\begin{enumerate}
+  \item Choose one equation and solve for one variable.
+  \item Substitute that expression into the other equations.
+  \item Simplify, reducing the number of variables.
+  \item Continue until only one variable remains, then back-substitute.
+\end{enumerate}
+
+This approach works for any size of system (though it quickly becomes tedious for large ones — that's where matrix methods later become useful).
+
+\subsubsection{Non-Linear Systems}
+
+If one or more of the equations is non-linear (for example, containing \( x^2 \), \( xy \), or \( \sqrt{x} \)), solving becomes more difficult.  
+The methods are similar in spirit (substitution or elimination), but the resulting equations are often higher-degree or require factoring.
+
+\begin{example}
+Solve
+\[
+\begin{cases}
+x^2 + y^2 = 25, \\
+y = x + 1.
+\end{cases}
+\]
+Substitute the second equation into the first:
+\[
+x^2 + (x + 1)^2 = 25 \Rightarrow 2x^2 + 2x + 1 = 25 \Rightarrow 2x^2 + 2x - 24 = 0.
+\]
+Simplify:
+\[
+x^2 + x - 12 = 0 \Rightarrow (x + 4)(x - 3) = 0.
+\]
+Thus, \( x = -4 \) or \( x = 3 \).  
+Then \( y = x + 1 \Rightarrow y = -3 \) or \( y = 4 \).  
+Solutions: \( (-4, -3) \) and \( (3, 4) \).
+\end{example}
+
+\begin{exercise}
+Solve the following systems:
+\begin{enumerate}
+  \item 
+  \(
+  \begin{cases}
+  y = x^2, \\
+  y = 2x + 3.
+  \end{cases}
+  \)
+  \item 
+  \(
+  \begin{cases}
+  x^2 + y^2 = 9, \\
+  y = 2x.
+  \end{cases}
+  \)
+\end{enumerate}
+\end{exercise}
+
+\subsection{Inequalities}
+
+In many situations, we are not interested in when two quantities are equal, but rather when one quantity is larger or smaller than another.  
+For example, suppose a company's revenue is \( R = 50x \) and its cost is \( C = 20x + 100 \).  
+The company makes a profit when the revenue is greater than the cost:
+\[
+R > C \quad \Rightarrow \quad 50x > 20x + 100.
+\]
+Solving this inequality gives
+\[
+30x > 100 \quad \Rightarrow \quad x > \frac{10}{3}.
+\]
+Thus, the company makes a profit once it sells more than \( \frac{10}{3} \) units. \\ 
+
+This example illustrates the basic idea of an inequality: it expresses that one side is \emph{greater than}, \emph{less than}, or sometimes \emph{no greater/less than} the other.
+
+\begin{definition}
+An \textbf{inequality} is a statement comparing two algebraic expressions using one of the symbols  
+\[
+<, \; >, \; \leq, \; \geq.
+\]
+The \textbf{solution set} of an inequality consists of all variable values that make the inequality true.
+\end{definition}
+
+\begin{example}
+Solve \( 3x - 2 < 4 \).
+\[
+3x < 6 \quad \Rightarrow \quad x < 2.
+\]
+\end{example}
+
+When solving inequalities, we perform the same operations as for equations — with one important exception.
+
+\paragraph{Important Rule:}  
+When multiplying or dividing both sides of an inequality by a \textbf{negative number}, the direction of the inequality sign must be \textbf{reversed}.
+
+\begin{example}
+Solve \( -2x > 6 \).
+\[
+x < -3.
+\]
+The inequality sign flips because we divided by a negative number.
+\end{example}
+
+\begin{exercise}
+Solve the following linear inequalities:
+\begin{enumerate}
+  \item \( 4x + 3 \geq 11 \)
+  \item \( -5x + 2 < 7 \)
+  \item \( 2x - 1 \leq 3x + 4 \)
+\end{enumerate}
+\end{exercise}
+
+A \textbf{quadratic inequality} involves a squared term, for example:
+\[
+x^2 - 5x + 6 > 0.
+\]
+To solve, we first find where the corresponding quadratic equals zero:
+\[
+x^2 - 5x + 6 = 0 \quad \Rightarrow \quad (x - 2)(x - 3) = 0,
+\]
+so the critical points are \( x = 2 \) and \( x = 3 \).  
+
+Next, we test intervals between and beyond these points:
+\[
+\begin{array}{c|c}
+\text{Interval} & \text{Sign of } (x - 2)(x - 3) \\ \hline
+x < 2 & (-)(-) = + \\
+2 < x < 3 & (+)(-) = - \\
+x > 3 & (+)(+) = +
+\end{array}
+\]
+
+The inequality \( (x - 2)(x - 3) > 0 \) is satisfied when the product is positive, i.e.
+\[
+x < 2 \text{ or } x > 3.
+\]
+
+\begin{example}
+Solve \( x^2 - 9 \leq 0 \).
+\[
+(x - 3)(x + 3) \leq 0.
+\]
+Testing intervals gives \( -3 \leq x \leq 3. \)
+\end{example}
+
+Let us now give a general algorithm for solving quadratic inequalities. \\
+
+Suppose we have an inequality of the form
+\[
+ax^2 + bx + c \;\text{(inequality symbol)}\; d,
+\]
+where \( a, b, c, d \) are numbers and the inequality symbol is one of \( >, \geq, <, \leq \).
+
+\begin{enumerate}
+  \item \textbf{Bring everything to one side.}  
+  Move all terms to one side so that the other side equals zero:
+  \[
+  ax^2 + bx + (c - d) \;\text{(inequality symbol)}\; 0.
+  \]
+  This is called the \textbf{standard form} of the inequality.
+
+  \item \textbf{Find the critical points.}  
+  Solve the corresponding quadratic equation
+  \[
+  ax^2 + bx + (c - d) = 0.
+  \]
+  The solutions (roots) divide the number line into intervals.
+
+  \item \textbf{Test the sign in each interval.}  
+  Choose one test value from each interval and determine whether the quadratic expression is positive or negative in that interval.
+
+  \item \textbf{Select the correct intervals.}  
+  \begin{itemize}
+    \item If the inequality is \( > 0 \), choose intervals where the expression is positive.
+    \item If it is \( < 0 \), choose intervals where it is negative.
+    \item For \( \geq \) or \( \leq \), include the points where the expression equals zero.
+  \end{itemize}
+
+  \item \textbf{Write the final solution.}  
+  Combine the chosen intervals into your final answer using inequalities or interval notation.
+\end{enumerate}
+
+\begin{example}
+Solve \( 2x^2 + 3x \le 7. \)
+
+\textbf{Step 1:} Bring all terms to one side:
+\[
+2x^2 + 3x - 7 \le 0.
+\]
+
+\textbf{Step 2:} Solve \( 2x^2 + 3x - 7 = 0 \):
+\[
+x = \frac{-3 \pm \sqrt{3^2 - 4(2)(-7)}}{4} = \frac{-3 \pm \sqrt{65}}{4}.
+\]
+
+\textbf{Step 3:} The expression is negative (below zero) between the roots.
+
+\textbf{Step 4:} Because the inequality is \( \le 0 \), we include the points where it equals zero.
+
+\[
+\frac{-3 - \sqrt{65}}{4} \le x \le \frac{-3 + \sqrt{65}}{4}.
+\]
+
+\textbf{Step 5:} This interval represents all \( x \)-values that satisfy the inequality.
+\end{example}
+
+\begin{exercise}
+Solve the following quadratic inequalities:
+\begin{enumerate}
+  \item \( x^2 - 4x > 0 \)
+  \item \( x^2 - 1 \leq 0 \)
+  \item \( x^2 + x - 6 \geq 0 \)
+\end{enumerate}
+\end{exercise}
+
+\subsection{Sums}
+
+\subsubsection{The Sigma Notation}
+
+Often we need to combine or add up a large number of terms that follow a particular pattern.  
+For example, suppose we want to find the total of the first five even numbers:
+
+\[
+2 + 4 + 6 + 8 + 10 = 30.
+\]
+
+Instead of writing out all terms, we can represent this more compactly using \textbf{indices} and \textbf{summation notation}.
+
+\begin{definition}
+A \textbf{sum} (or \textbf{series}) is an expression of the form
+\[
+a_1 + a_2 + a_3 + \dots + a_n,
+\]
+where \( a_1, a_2, \dots, a_n \) are called the \textbf{terms} of the sum.  
+The variable that identifies the position of each term (such as \( 1, 2, 3, \dots, n \)) is called an \textbf{index}.
+\end{definition}
+
+We use the Greek letter \( \Sigma \) (sigma) to denote addition over a range of indices.
+
+\[
+\sum_{k=1}^{n} a_k = a_1 + a_2 + a_3 + \dots + a_n.
+\]
+
+\begin{example}
+\[
+\sum_{k=1}^{5} k = 1 + 2 + 3 + 4 + 5 = 15.
+\]
+\end{example}
+
+\begin{example}
+\[
+\sum_{i=1}^{4} (2i + 1) = 3 + 5 + 7 + 9 = 24.
+\]
+\end{example}
+
+We can now find a closed formula for the sum of the first \( n \) natural numbers.
+
+\[
+\sum_{k=1}^{n} k = 1 + 2 + 3 + \dots + n = \; ?
+\]
+
+There is a simple argument we can use: \\
+We write the numbers \( 1, 2, \dots, n \) in order, and then write them again in reverse order below:
+
+\[
+\begin{array}{cccccc}
+1 & 2 & 3 & \dots & (n-1) & n \\
+n & (n-1) & (n-2) & \dots & 2 & 1
+\end{array}
+\]
+
+Now, if we add the two rows column by column, each pair of numbers adds up to the same total:
+\[
+1 + n = n + 1, \quad 2 + (n-1) = n + 1, \quad 3 + (n-2) = n + 1, \quad \text{and so on.}
+\]
+
+\textbf{If \( n \) is even:}  
+There are \( \frac{n}{2} \) such pairs, and each pair sums to \( n + 1 \).  
+Hence,
+\[
+1 + 2 + \dots + n = \frac{n}{2}(n + 1).
+\]
+
+\textbf{If \( n \) is odd:}  
+Then we can pair all numbers except the middle one.  
+There are \( \frac{n - 1}{2} \) pairs (each summing to \( n + 1 \)) plus the unpaired middle number \( \frac{n + 1}{2} \).  
+Thus,
+\[
+\left(\frac{n - 1}{2}\right)(n + 1) + \frac{n + 1}{2}
+= \frac{n + 1}{2}\big((n - 1) + 1\big)
+= \frac{n(n + 1)}{2}.
+\]
+
+Therefore we get:
+
+\begin{theorem}
+  \[
+  \sum_{k=1}^{n} k = \frac{n(n + 1)}{2}.
+  \]
+\end{theorem}
+
+\begin{exercise}
+Compute the following:
+\begin{enumerate}
+  \item \( \displaystyle \sum_{k=1}^{6} 2k \)
+  \item \( \displaystyle \sum_{j=1}^{5} (j + 2) \)
+\end{enumerate}
+\end{exercise}
+
+\subsubsection{Rules for Manipulating Sums}
+
+Sums follow a few simple algebraic rules.
+
+\paragraph{1. Linearity of the Sum}
+For any two sequences \( (a_k) \) and \( (b_k) \), and any constant \( c \),
+\[
+\sum_{k=1}^{n} (a_k + b_k) = \sum_{k=1}^{n} a_k + \sum_{k=1}^{n} b_k,
+\]
+\[
+\sum_{k=1}^{n} (c \cdot a_k) = c \cdot \sum_{k=1}^{n} a_k.
+\]
+
+The linearity properties follow directly from the definition of the summation symbol.  
+By definition,
+\[
+\sum_{k=1}^{n} a_k = a_1 + a_2 + a_3 + \dots + a_n.
+\]
+Therefore,
+\[
+\sum_{k=1}^{n} (a_k + b_k) = (a_1 + b_1) + (a_2 + b_2) + \dots + (a_n + b_n).
+\]
+Grouping all \( a_k \) terms and all \( b_k \) terms gives
+\[
+(a_1 + a_2 + \dots + a_n) + (b_1 + b_2 + \dots + b_n)
+= \sum_{k=1}^{n} a_k + \sum_{k=1}^{n} b_k.
+\]
+This shows
+\[
+\sum_{k=1}^{n} (a_k + b_k) = \sum_{k=1}^{n} a_k + \sum_{k=1}^{n} b_k.
+\]
+
+Similarly, for a constant \( c \),
+\[
+\sum_{k=1}^{n} (c \cdot a_k)
+= (c a_1) + (c a_2) + \dots + (c a_n)
+= c(a_1 + a_2 + \dots + a_n)
+= c \sum_{k=1}^{n} a_k.
+\]
+
+\begin{example}
+\[
+\sum_{k=1}^{3} (2k + 1) = \sum_{k=1}^{3} 2k + \sum_{k=1}^{3} 1 = 2\sum_{k=1}^{3} k + 3 = 2\cdot6 + 3 = 15.
+\]
+\end{example}
+
+\paragraph{2. Splitting and Combining Summation Limits}
+We can split a sum into its parts:
+\[
+\sum_{k=1}^{n} a_k = \sum_{k=1}^{m} a_k + \sum_{k=m+1}^{n} a_k.
+\]
+
+This follows immediately from the definition of the summation symbol.
+
+\begin{example}
+Consider
+\[
+\sum_{k=1}^{5} k = 1 + 2 + 3 + 4 + 5 = 15.
+\]
+We can split this sum at \( m = 3 \):
+\[
+\sum_{k=1}^{5} k = \sum_{k=1}^{3} k + \sum_{k=4}^{5} k = (1 + 2 + 3) + (4 + 5) = 6 + 9 = 15.
+\]
+\end{example}
+
+\paragraph{3. Index Shifting}
+
+Sometimes it is useful to \emph{shift the index} of a sum, especially when comparing or combining sums that start at different indices.  
+For example, consider
+\[
+\sum_{k=0}^{3} (k + 1) = 1 + 2 + 3 + 4 = 10.
+\]
+If we let the new index \( j = k + 1 \), then as \( k \) runs from \( 0 \) to \( 3 \), the index \( j \) runs from \( 1 \) to \( 4 \).  
+The same sum can therefore be written as
+\[
+\sum_{j=1}^{4} j = 10.
+\]
+This process is called \textbf{index shifting} — we re-label the index variable to start from a different point while keeping the terms identical. \\
+
+In general, if we shift the index by a constant \( r \) using \( j = k + r \), the sum transforms as
+\[
+\sum_{k=p}^{q} a_k = \sum_{j=p+r}^{q+r} a_{j - r}.
+\]
+
+Here:
+\begin{itemize}
+  \item \( k \) is the original index running from \( p \) to \( q \),
+  \item \( j \) is the new index after the shift,
+  \item \( r \) is the amount by which the index is shifted,
+  \item \( a_k \) (or \( a_{j - r} \)) denotes the term being summed.
+\end{itemize}
+
+The formula works because when \( k = p \), the new index is \( j = p + r \),  
+and when \( k = q \), the new index is \( j = q + r \).  
+Each term \( a_k \) becomes \( a_{j - r} \), so every term of the original sum is preserved — only the labeling of the index changes.
+
+\begin{exercise}
+Simplify or rewrite the following:
+\begin{enumerate}
+  \item \( \displaystyle \sum_{k=1}^{n} (3k - 1) \)
+  \item Rewrite \( \displaystyle \sum_{k=0}^{n-1} (k + 2) \) by shifting the index to start at \( j = 1 \).
+\end{enumerate}
+\end{exercise}

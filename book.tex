@@ -1,0 +1,43 @@
+\documentclass[a4paper,11pt]{article}
+
+% Packages
+\usepackage[utf8]{inputenc} % UTF-8 encoding
+\usepackage{amsmath} % Math formulas
+\usepackage{amssymb} % Math symbols
+\usepackage{amsthm} % Theorem environments
+\usepackage{geometry} % Page layout
+\geometry{margin=1in}
+\usepackage{graphicx} % For including graphics
+\usepackage{hyperref} % Hyperlinks in the document
+\usepackage{enumitem} % Better control over lists
+
+% Title
+\title{Mathematical Foundations You Will Actually Need}
+\author{Mikhail Berkov}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{exercise}[theorem]{Exercise}
+\usepackage{minted}
+
+\setlength{\parindent}{0pt}
+
+% Document starts
+\begin{document}
+
+% Title Page
+\maketitle
+\tableofcontents
+\newpage
+
+\input{chapter1.tex}
+\input{chapter2.tex}
+
+\end{document}
